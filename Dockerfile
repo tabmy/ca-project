@@ -9,5 +9,6 @@ ADD . /code/ca-project
 CMD source /code/bin/activate
 RUN pip install -r /code/ca-project/requirements.txt
 RUN python run.py
+RUN pwd
 
 
