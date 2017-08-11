@@ -3,7 +3,9 @@ MAINTAINER Andreas Jacobsen "Andreas Jacobsen"
 RUN apt-get update -y
 RUN apt-get install -y python python-pip python-dev build-essential python-virtualenv
 RUN virtualenv code && \
-cd code 
-ADD ./ca-project
+cd code  && \ 
+mkdir ca-project
+ADD . /code/ca-project
+CMD source /code/bin/activate && pip install -r /code/ca-project/requirements.txt
 
 
