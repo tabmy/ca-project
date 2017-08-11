@@ -8,9 +8,5 @@ agent any
            }
         }
     }
-    docker {
-        image 'samuelvimes/ca-project' 
-        label 'drunken_flask'
-        }
     }
 
