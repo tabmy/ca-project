@@ -7,6 +7,10 @@ agent any
             sh "docker build --pull=true -t samuelvimes/ca-project ." //full filbane om dette ikke funker
            }
         }
+
+	stage ('run') {
+	    sh "docker run samuelvimes/ca-project"
+	    sh "pwd" 
     }
 }
 
