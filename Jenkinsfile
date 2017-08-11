@@ -9,8 +9,10 @@ agent any
         }
 
 	stage ('run') {
+	    steps {
 	    sh "docker run samuelvimes/ca-project"
-	    sh "pwd" 
+	    sh "pwd"
+} 
     }
 }
 }
