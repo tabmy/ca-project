@@ -1,5 +1,5 @@
 pipeline {
-agent any {
+agent any 
     stages {
         stage ('build')	{
             steps{
@@ -13,4 +13,4 @@ agent any {
         label 'drunken_flask'
         }
     }
-}
+
