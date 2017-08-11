@@ -1,8 +1,16 @@
-node('dat_ass') {
-    stage("Preperation") {
-       git 'https://github.com/tabmy/ca-project.git'
+pipeline {
+agent any {
+    stages {
+        stage "build" {
+            steps{
+            sh "echo $PWD"
+            sh "docker build --pull=true -t  samuelvimes/ca-project:$GIT_COMMIT ." //full filbane om dette ikke funker
+        }
+        }
     }
-    stage("Build") {
-        sh 'docker run -i --rm --name ca-project -v "$PWD":/usr/src/mymaven -w /usr/src/mymaven maven:3-jdk-8 mvn install'
+    docker {
+        image 'samuelvimes/ca-project' 
+        label 'drunken_flask'
+        }
     }
 }
