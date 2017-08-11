@@ -6,6 +6,7 @@ RUN virtualenv code && \
 cd code  && \ 
 mkdir ca-project
 ADD . /code/ca-project
-CMD source /code/bin/activate && pip install -r /code/ca-project/requirements.txt
+CMD source /code/bin/activate
+RUN  pip install -r /code/ca-project/requirements.txt
 
 
